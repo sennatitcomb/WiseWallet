@@ -1,0 +1,736 @@
+import React, { useState, useEffect } from 'react';
+import { Camera, Upload, Plus, TrendingUp, DollarSign, Calendar, Store, Tag, BarChart3, Download, Search, X } from 'lucide-react';
+
+const ReceiptTracker = () => {
+  const [receipts, setReceipts] = useState([]);
+  const [items, setItems] = useState([]);
+  const [filteredReceipts, setFilteredReceipts] = useState([]);
+  const [view, setView] = useState('dashboard');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filterCategory, setFilterCategory] = useState('all');
+  const [filterStore, setFilterStore] = useState('all');
+  const [dateRange, setDateRange] = useState({ start: '', end: '' });
+  
+  const [manualEntry, setManualEntry] = useState({
+    store: '',
+    date: new Date().toISOString().split('T')[0],
+    total: '',
+    category: 'groceries',
+    items: [{ name: '', price: '', quantity: 1 }]
+  });
+
+  const categories = ['groceries', 'dining', 'utilities', 'entertainment', 'transportation', 'healthcare', 'shopping', 'other'];
+
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  useEffect(() => {
+    let filtered = [...receipts];
+    
+    if (searchTerm) {
+      filtered = filtered.filter(r => 
+        r.store.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (r.items && r.items.some(item => item.name.toLowerCase().includes(searchTerm.toLowerCase())))
+      );
+    }
+    
+    if (filterCategory !== 'all') {
+      filtered = filtered.filter(r => r.category === filterCategory);
+    }
+    
+    if (filterStore !== 'all') {
+      filtered = filtered.filter(r => r.store === filterStore);
+    }
+    
+    if (dateRange.start) {
+      filtered = filtered.filter(r => new Date(r.date) >= new Date(dateRange.start));
+    }
+    
+    if (dateRange.end) {
+      filtered = filtered.filter(r => new Date(r.date) <= new Date(dateRange.end));
+    }
+    
+    setFilteredReceipts(filtered);
+  }, [receipts, searchTerm, filterCategory, filterStore, dateRange]);
+
+  const loadData = async () => {
+    try {
+      const receiptData = await window.storage.get('receipts');
+      const itemData = await window.storage.get('items');
+      
+      if (receiptData) {
+        setReceipts(JSON.parse(receiptData.value));
+      }
+      if (itemData) {
+        setItems(JSON.parse(itemData.value));
+      }
+    } catch (err) {
+      console.log('No existing data found');
+    }
+  };
+
+  const saveData = async (newReceipts, newItems) => {
+    try {
+      await window.storage.set('receipts', JSON.stringify(newReceipts));
+      await window.storage.set('items', JSON.stringify(newItems));
+    } catch (err) {
+      console.error('Error saving data:', err);
+    }
+  };
+
+  const handleManualSubmit = (e) => {
+    e.preventDefault();
+    
+    const newReceipt = {
+      id: Date.now().toString(),
+      store: manualEntry.store,
+      date: manualEntry.date,
+      category: manualEntry.category,
+      total: parseFloat(manualEntry.total),
+      items: manualEntry.items.map(item => ({
+        name: item.name,
+        price: parseFloat(item.price),
+        quantity: parseInt(item.quantity)
+      }))
+    };
+    
+    const newReceipts = [...receipts, newReceipt];
+    const newItems = [...items, ...newReceipt.items.map(item => ({
+      name: item.name,
+      price: item.price,
+      quantity: item.quantity,
+      store: newReceipt.store,
+      date: newReceipt.date,
+      category: newReceipt.category,
+      receiptId: newReceipt.id
+    }))];
+    
+    setReceipts(newReceipts);
+    setItems(newItems);
+    saveData(newReceipts, newItems);
+    
+    setManualEntry({
+      store: '',
+      date: new Date().toISOString().split('T')[0],
+      total: '',
+      category: 'groceries',
+      items: [{ name: '', price: '', quantity: 1 }]
+    });
+    
+    setView('dashboard');
+  };
+
+  const handleImageUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    
+    alert('OCR functionality requires a backend server. Please use manual entry or CSV import.');
+  };
+
+  const handleCSVUpload = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const text = event.target.result;
+      const rows = text.split('\n').map(row => row.split(','));
+      const headers = rows[0].map(h => h.trim().toLowerCase());
+      
+      const newReceipts = [];
+      const newItems = [];
+      
+      for (let i = 1; i < rows.length; i++) {
+        const row = rows[i];
+        if (row.length < 3) continue;
+        
+        const dateIdx = headers.findIndex(h => h.includes('date'));
+        const descIdx = headers.findIndex(h => h.includes('desc') || h.includes('merchant') || h.includes('store'));
+        const amountIdx = headers.findIndex(h => h.includes('amount') || h.includes('price'));
+        const categoryIdx = headers.findIndex(h => h.includes('category'));
+        
+        if (dateIdx === -1 || amountIdx === -1) continue;
+        
+        const storeName = row[descIdx] ? row[descIdx].trim() : 'Unknown';
+        const dateValue = row[dateIdx] ? row[dateIdx].trim() : new Date().toISOString().split('T')[0];
+        const amountValue = row[amountIdx] ? Math.abs(parseFloat(row[amountIdx].replace(/[^0-9.-]/g, ''))) : 0;
+        const categoryValue = row[categoryIdx] ? row[categoryIdx].trim().toLowerCase() : 'other';
+        
+        const receipt = {
+          id: 'csv-' + Date.now() + '-' + i,
+          store: storeName,
+          date: dateValue,
+          total: amountValue,
+          category: categoryValue,
+          items: [{
+            name: storeName,
+            price: amountValue,
+            quantity: 1
+          }]
+        };
+        
+        newReceipts.push(receipt);
+        newItems.push({
+          name: receipt.items[0].name,
+          price: receipt.items[0].price,
+          quantity: receipt.items[0].quantity,
+          store: receipt.store,
+          date: receipt.date,
+          category: receipt.category,
+          receiptId: receipt.id
+        });
+      }
+      
+      const updatedReceipts = [...receipts, ...newReceipts];
+      const updatedItems = [...items, ...newItems];
+      
+      setReceipts(updatedReceipts);
+      setItems(updatedItems);
+      saveData(updatedReceipts, updatedItems);
+      
+      alert('Imported ' + newReceipts.length + ' transactions');
+    };
+    
+    reader.readAsText(file);
+  };
+
+  const addItemRow = () => {
+    setManualEntry({
+      ...manualEntry,
+      items: [...manualEntry.items, { name: '', price: '', quantity: 1 }]
+    });
+  };
+
+  const updateItem = (index, field, value) => {
+    const newItems = [...manualEntry.items];
+    newItems[index][field] = value;
+    setManualEntry({ ...manualEntry, items: newItems });
+  };
+
+  const removeItem = (index) => {
+    const newItems = manualEntry.items.filter((item, i) => i !== index);
+    setManualEntry({ ...manualEntry, items: newItems });
+  };
+
+  const totalSpent = receipts.reduce((sum, r) => sum + r.total, 0);
+  const avgPerReceipt = receipts.length ? totalSpent / receipts.length : 0;
+  
+  const categoryTotals = categories.map(cat => {
+    const total = receipts.filter(r => r.category === cat).reduce((sum, r) => sum + r.total, 0);
+    return { category: cat, total: total };
+  }).filter(c => c.total > 0);
+  
+  const uniqueStores = [...new Set(receipts.map(r => r.store))];
+  const storeTotals = uniqueStores.map(store => {
+    const storeReceipts = receipts.filter(r => r.store === store);
+    const total = storeReceipts.reduce((sum, r) => sum + r.total, 0);
+    return {
+      store: store,
+      total: total,
+      count: storeReceipts.length
+    };
+  }).sort((a, b) => b.total - a.total);
+  
+  const itemPriceHistory = {};
+  items.forEach(item => {
+    const key = item.name.toLowerCase();
+    if (!itemPriceHistory[key]) {
+      itemPriceHistory[key] = [];
+    }
+    itemPriceHistory[key].push({
+      date: item.date,
+      price: item.price,
+      store: item.store
+    });
+  });
+
+  const getUniqueStores = () => {
+    return [...new Set(receipts.map(r => r.store))];
+  };
+
+  const exportData = () => {
+    const dataStr = JSON.stringify({ receipts: receipts, items: items }, null, 2);
+    const dataBlob = new Blob([dataStr], { type: 'application/json' });
+    const url = URL.createObjectURL(dataBlob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'receipt-data-' + new Date().toISOString().split('T')[0] + '.json';
+    link.click();
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <nav className="bg-white shadow-sm border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16">
+            <div className="flex space-x-8">
+              <button
+                onClick={() => setView('dashboard')}
+                className={'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ' + (view === 'dashboard' ? 'border-blue-500 text-gray-900' : 'border-transparent text-gray-500 hover:text-gray-700')}
+              >
+                <BarChart3 className="w-4 h-4 mr-2" />
+                Dashboard
+              </button>
+              <button
+                onClick={() => setView('receipts')}
+                className={'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ' + (view === 'receipts' ? 'border-blue-500 text-gray-900' : 'border-transparent text-gray-500 hover:text-gray-700')}
+              >
+                <Calendar className="w-4 h-4 mr-2" />
+                All Receipts
+              </button>
+              <button
+                onClick={() => setView('items')}
+                className={'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ' + (view === 'items' ? 'border-blue-500 text-gray-900' : 'border-transparent text-gray-500 hover:text-gray-700')}
+              >
+                <Tag className="w-4 h-4 mr-2" />
+                Price History
+              </button>
+              <button
+                onClick={() => setView('stores')}
+                className={'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ' + (view === 'stores' ? 'border-blue-500 text-gray-900' : 'border-transparent text-gray-500 hover:text-gray-700')}
+              >
+                <Store className="w-4 h-4 mr-2" />
+                Store Comparison
+              </button>
+            </div>
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={() => setView('manual')}
+                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+              >
+                <Plus className="w-4 h-4 mr-2" />
+                Add Receipt
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {view === 'dashboard' && (
+          <div className="space-y-6">
+            <h1 className="text-3xl font-bold text-gray-900">Financial Dashboard</h1>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white rounded-lg shadow p-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm text-gray-600">Total Spent</p>
+                    <p className="text-2xl font-bold text-gray-900">${totalSpent.toFixed(2)}</p>
+                  </div>
+                  <DollarSign className="w-8 h-8 text-green-500" />
+                </div>
+              </div>
+              
+              <div className="bg-white rounded-lg shadow p-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm text-gray-600">Total Receipts</p>
+                    <p className="text-2xl font-bold text-gray-900">{receipts.length}</p>
+                  </div>
+                  <Calendar className="w-8 h-8 text-blue-500" />
+                </div>
+              </div>
+              
+              <div className="bg-white rounded-lg shadow p-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm text-gray-600">Avg per Receipt</p>
+                    <p className="text-2xl font-bold text-gray-900">${avgPerReceipt.toFixed(2)}</p>
+                  </div>
+                  <TrendingUp className="w-8 h-8 text-purple-500" />
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow p-6">
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Spending by Category</h2>
+              <div className="space-y-3">
+                {categoryTotals.map(cat => (
+                  <div key={cat.category}>
+                    <div className="flex justify-between text-sm mb-1">
+                      <span className="capitalize">{cat.category}</span>
+                      <span className="font-medium">${cat.total.toFixed(2)}</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div
+                        className="bg-blue-600 h-2 rounded-full"
+                        style={{ width: (cat.total / totalSpent * 100) + '%' }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow p-6">
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Quick Actions</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <label className="flex items-center justify-center px-4 py-3 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50">
+                  <Camera className="w-5 h-5 mr-2 text-gray-600" />
+                  <span className="text-sm font-medium">Upload Receipt Photo</span>
+                  <input type="file" accept="image/*" onChange={handleImageUpload} className="hidden" />
+                </label>
+                
+                <label className="flex items-center justify-center px-4 py-3 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50">
+                  <Upload className="w-5 h-5 mr-2 text-gray-600" />
+                  <span className="text-sm font-medium">Import CSV</span>
+                  <input type="file" accept=".csv" onChange={handleCSVUpload} className="hidden" />
+                </label>
+                
+                <button
+                  onClick={exportData}
+                  className="flex items-center justify-center px-4 py-3 border-2 border-dashed border-gray-300 rounded-lg hover:border-blue-500 hover:bg-blue-50"
+                >
+                  <Download className="w-5 h-5 mr-2 text-gray-600" />
+                  <span className="text-sm font-medium">Export Data</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {view === 'manual' && (
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-white rounded-lg shadow p-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Add Receipt Manually</h2>
+              <form onSubmit={handleManualSubmit} className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Store Name</label>
+                    <input
+                      type="text"
+                      required
+                      value={manualEntry.store}
+                      onChange={(e) => setManualEntry({ ...manualEntry, store: e.target.value })}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Date</label>
+                    <input
+                      type="date"
+                      required
+                      value={manualEntry.date}
+                      onChange={(e) => setManualEntry({ ...manualEntry, date: e.target.value })}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                    />
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
+                    <select
+                      value={manualEntry.category}
+                      onChange={(e) => setManualEntry({ ...manualEntry, category: e.target.value })}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                    >
+                      {categories.map(cat => (
+                        <option key={cat} value={cat} className="capitalize">{cat}</option>
+                      ))}
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Total Amount</label>
+                    <input
+                      type="number"
+                      step="0.01"
+                      required
+                      value={manualEntry.total}
+                      onChange={(e) => setManualEntry({ ...manualEntry, total: e.target.value })}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                    />
+                  </div>
+                </div>
+
+                <div className="border-t pt-4">
+                  <div className="flex justify-between items-center mb-3">
+                    <h3 className="text-lg font-medium text-gray-900">Items</h3>
+                    <button
+                      type="button"
+                      onClick={addItemRow}
+                      className="text-sm text-blue-600 hover:text-blue-700"
+                    >
+                      + Add Item
+                    </button>
+                  </div>
+                  
+                  {manualEntry.items.map((item, idx) => (
+                    <div key={idx} className="flex gap-2 mb-2">
+                      <input
+                        type="text"
+                        placeholder="Item name"
+                        required
+                        value={item.name}
+                        onChange={(e) => updateItem(idx, 'name', e.target.value)}
+                        className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                      />
+                      <input
+                        type="number"
+                        step="0.01"
+                        placeholder="Price"
+                        required
+                        value={item.price}
+                        onChange={(e) => updateItem(idx, 'price', e.target.value)}
+                        className="w-24 px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                      />
+                      <input
+                        type="number"
+                        placeholder="Qty"
+                        required
+                        value={item.quantity}
+                        onChange={(e) => updateItem(idx, 'quantity', e.target.value)}
+                        className="w-16 px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                      />
+                      {manualEntry.items.length > 1 && (
+                        <button
+                          type="button"
+                          onClick={() => removeItem(idx)}
+                          className="p-2 text-red-600 hover:bg-red-50 rounded-md"
+                        >
+                          <X className="w-5 h-5" />
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex gap-3 pt-4">
+                  <button
+                    type="submit"
+                    className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 font-medium"
+                  >
+                    Save Receipt
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setView('dashboard')}
+                    className="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
+
+        {view === 'receipts' && (
+          <div className="space-y-6">
+            <div className="flex justify-between items-center">
+              <h1 className="text-3xl font-bold text-gray-900">All Receipts</h1>
+            </div>
+
+            <div className="bg-white rounded-lg shadow p-4">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Search</label>
+                  <div className="relative">
+                    <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+                    <input
+                      type="text"
+                      placeholder="Store or item..."
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md"
+                    />
+                  </div>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
+                  <select
+                    value={filterCategory}
+                    onChange={(e) => setFilterCategory(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                  >
+                    <option value="all">All Categories</option>
+                    {categories.map(cat => (
+                      <option key={cat} value={cat} className="capitalize">{cat}</option>
+                    ))}
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Store</label>
+                  <select
+                    value={filterStore}
+                    onChange={(e) => setFilterStore(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                  >
+                    <option value="all">All Stores</option>
+                    {getUniqueStores().map(store => (
+                      <option key={store} value={store}>{store}</option>
+                    ))}
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Date Range</label>
+                  <input
+                    type="date"
+                    value={dateRange.start}
+                    onChange={(e) => setDateRange({ ...dateRange, start: e.target.value })}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              {filteredReceipts.length === 0 ? (
+                <div className="bg-white rounded-lg shadow p-8 text-center text-gray-500">
+                  No receipts found. Add your first receipt to get started!
+                </div>
+              ) : (
+                filteredReceipts.map(receipt => (
+                  <div key={receipt.id} className="bg-white rounded-lg shadow p-6">
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <h3 className="text-lg font-bold text-gray-900">{receipt.store}</h3>
+                        <p className="text-sm text-gray-600">{new Date(receipt.date).toLocaleDateString()}</p>
+                        <span className="inline-block mt-1 px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded capitalize">
+                          {receipt.category}
+                        </span>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-2xl font-bold text-gray-900">${receipt.total.toFixed(2)}</p>
+                      </div>
+                    </div>
+                    
+                    {receipt.items && receipt.items.length > 0 && (
+                      <div className="border-t pt-4">
+                        <h4 className="text-sm font-medium text-gray-700 mb-2">Items:</h4>
+                        <div className="space-y-1">
+                          {receipt.items.map((item, idx) => (
+                            <div key={idx} className="flex justify-between text-sm">
+                              <span className="text-gray-600">{item.name} (x{item.quantity})</span>
+                              <span className="text-gray-900 font-medium">${item.price.toFixed(2)}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+        )}
+
+        {view === 'items' && (
+          <div className="space-y-6">
+            <h1 className="text-3xl font-bold text-gray-900">Item Price History</h1>
+            
+            <div className="space-y-4">
+              {Object.keys(itemPriceHistory).length === 0 ? (
+                <div className="bg-white rounded-lg shadow p-8 text-center text-gray-500">
+                  No item history yet. Add receipts to track price changes over time!
+                </div>
+              ) : (
+                Object.entries(itemPriceHistory).map(([itemName, history]) => {
+                  const sortedHistory = history.sort((a, b) => new Date(a.date) - new Date(b.date));
+                  const minPrice = Math.min(...history.map(h => h.price));
+                  const maxPrice = Math.max(...history.map(h => h.price));
+                  const avgPrice = history.reduce((sum, h) => sum + h.price, 0) / history.length;
+                  
+                  return (
+                    <div key={itemName} className="bg-white rounded-lg shadow p-6">
+                      <h3 className="text-lg font-bold text-gray-900 capitalize mb-4">{itemName}</h3>
+                      
+                      <div className="grid grid-cols-3 gap-4 mb-4">
+                        <div className="text-center p-3 bg-green-50 rounded">
+                          <p className="text-sm text-gray-600">Lowest</p>
+                          <p className="text-xl font-bold text-green-600">${minPrice.toFixed(2)}</p>
+                        </div>
+                        <div className="text-center p-3 bg-blue-50 rounded">
+                          <p className="text-sm text-gray-600">Average</p>
+                          <p className="text-xl font-bold text-blue-600">${avgPrice.toFixed(2)}</p>
+                        </div>
+                        <div className="text-center p-3 bg-red-50 rounded">
+                          <p className="text-sm text-gray-600">Highest</p>
+                          <p className="text-xl font-bold text-red-600">${maxPrice.toFixed(2)}</p>
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-2">
+                        {sortedHistory.map((entry, idx) => (
+                          <div key={idx} className="flex justify-between items-center p-2 bg-gray-50 rounded">
+                            <div>
+                              <span className="text-sm font-medium text-gray-900">{entry.store}</span>
+                              <span className="text-xs text-gray-500 ml-2">{new Date(entry.date).toLocaleDateString()}</span>
+                            </div>
+                            <span className="text-sm font-bold text-gray-900">${entry.price.toFixed(2)}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })
+              )}
+            </div>
+          </div>
+        )}
+
+        {view === 'stores' && (
+          <div className="space-y-6">
+            <h1 className="text-3xl font-bold text-gray-900">Store Comparison</h1>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {storeTotals.length === 0 ? (
+                <div className="col-span-full bg-white rounded-lg shadow p-8 text-center text-gray-500">
+                  No store data yet. Add receipts to compare stores!
+                </div>
+              ) : (
+                storeTotals.map(store => {
+                  const storeReceipts = receipts.filter(r => r.store === store.store);
+                  const avgPerVisit = store.total / store.count;
+                  
+                  return (
+                    <div key={store.store} className="bg-white rounded-lg shadow p-6">
+                      <h3 className="text-lg font-bold text-gray-900 mb-4">{store.store}</h3>
+                      
+                      <div className="space-y-3">
+                        <div className="flex justify-between">
+                          <span className="text-sm text-gray-600">Total Spent</span>
+                          <span className="text-sm font-bold text-gray-900">${store.total.toFixed(2)}</span>
+                        </div>
+                        
+                        <div className="flex justify-between">
+                          <span className="text-sm text-gray-600">Visits</span>
+                          <span className="text-sm font-bold text-gray-900">{store.count}</span>
+                        </div>
+                        
+                        <div className="flex justify-between">
+                          <span className="text-sm text-gray-600">Avg per Visit</span>
+                          <span className="text-sm font-bold text-gray-900">${avgPerVisit.toFixed(2)}</span>
+                        </div>
+                        
+                        <div className="pt-3 border-t">
+                          <p className="text-xs text-gray-600 mb-2">Categories:</p>
+                          <div className="flex flex-wrap gap-1">
+                            {[...new Set(storeReceipts.map(r => r.category))].map(cat => (
+                              <span key={cat} className="px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded capitalize">
+                                {cat}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default ReceiptTracker;
