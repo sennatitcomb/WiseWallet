@@ -44,10 +44,6 @@ Take control of your financial history, understand how your spending changes ove
 
 ## Deployment Instructions
 
-### Prerequisites
-- A modern web browser (Chrome, Firefox, Safari, or Edge)
-- A web server to host the application
-
 ### Local Deployment
 
 1. **Clone or download the repository**
