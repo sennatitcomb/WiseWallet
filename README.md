@@ -41,3 +41,56 @@ Who It’s For:
 - Anyone who wants long-term tracking of prices, receipts, and budgets
 
 Take control of your financial history, understand how your spending changes over time, and make smarter decisions—powered by your own data.
+
+## Deployment Instructions
+
+### Prerequisites
+- A modern web browser (Chrome, Firefox, Safari, or Edge)
+- A web server to host the application
+
+### Local Deployment
+
+1. **Clone or download the repository**
+   ```bash
+   git clone https://github.com/sennatitcomb/WiseWallet.git
+   cd WiseWallet
+   ```
+
+2. **Serve the application**
+   You can use any local web server. Here are a few options:
+
+   **Using Python 3:**
+   ```bash
+   python3 -m http.server 8000
+   ```
+
+   **Using Node.js (with http-server):**
+   ```bash
+   npm install -g http-server
+   http-server
+   ```
+
+   **Using PHP:**
+   ```bash
+   php -S localhost:8000
+   ```
+
+3. **Access the application**
+   Open your web browser and navigate to:
+   ```
+   http://localhost:8000/wisewallet.html
+   ```
+
+### Remote Deployment
+
+For self-hosting on a remote server:
+
+1. **Upload files to your server** using FTP, SFTP, or Git
+2. **Configure your web server** (Apache, Nginx, etc.) to serve the files
+3. **Access the application** at your server's domain/IP address
+
+### Data Storage
+
+- All data is stored locally in your browser's local storage or in files on your server
+- No cloud sync is configured by default
+- For persistent data across devices, consider setting up a backend database

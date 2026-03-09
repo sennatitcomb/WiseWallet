@@ -1,0 +1,61 @@
+date,store,description,amount,category,quantity
+2026-02-07,Whole Foods,Organic bananas,3.49,produce,1
+2026-02-07,Whole Foods,Greek yogurt,5.99,dairy,1
+2026-02-08,Trader Joe's,Free range eggs,4.29,dairy,1
+2026-02-08,Trader Joe's,Almond butter,7.99,pantry,1
+2026-02-09,Safeway,Ground beef,8.49,meat,1
+2026-02-09,Safeway,Broccoli,2.19,produce,1
+2026-02-10,Costco,Rotisserie chicken,7.99,meat,1
+2026-02-10,Costco,Blueberries,9.99,produce,2
+2026-02-11,Whole Foods,Salmon fillet,12.99,meat,1
+2026-02-11,Whole Foods,Asparagus,4.99,produce,1
+2026-02-12,Trader Joe's,Quinoa,4.49,pantry,1
+2026-02-12,Trader Joe's,Olive oil,9.99,pantry,1
+2026-02-13,Safeway,Cheddar cheese,5.49,dairy,1
+2026-02-13,Safeway,Tomatoes,2.99,produce,2
+2026-02-14,Costco,Pasta assortment,6.99,pantry,2
+2026-02-14,Costco,Milk,3.49,dairy,2
+2026-02-15,Whole Foods,Avocados,6.98,produce,3
+2026-02-15,Whole Foods,Almond milk,4.99,beverages,1
+2026-02-16,Trader Joe's,Chicken breast,9.99,meat,1
+2026-02-16,Trader Joe's,Kale,2.99,produce,1
+2026-02-17,Safeway,Mozzarella,4.99,dairy,1
+2026-02-17,Safeway,Bell peppers,3.99,produce,2
+2026-02-18,Costco,Orange juice,8.99,beverages,1
+2026-02-18,Costco,Spinach,2.49,produce,1
+2026-02-19,Whole Foods,Pork chops,11.99,meat,1
+2026-02-19,Whole Foods,Carrots,1.99,produce,1
+2026-02-20,Trader Joe's,Brown rice,3.99,pantry,1
+2026-02-20,Trader Joe's,Coconut oil,8.99,pantry,1
+2026-02-21,Safeway,Yogurt,4.99,dairy,1
+2026-02-21,Safeway,Cucumber,1.49,produce,1
+2026-02-22,Costco,Chicken thighs,7.99,meat,1
+2026-02-22,Costco,Berries,11.99,produce,2
+2026-02-23,Whole Foods,Grass fed beef,14.99,meat,1
+2026-02-23,Whole Foods,Mixed greens,3.99,produce,1
+2026-02-24,Trader Joe's,Tofu,2.99,pantry,1
+2026-02-24,Trader Joe's,Soy sauce,3.49,pantry,1
+2026-02-25,Safeway,Feta cheese,4.49,dairy,1
+2026-02-25,Safeway,Onions,1.99,produce,3
+2026-02-26,Costco,Shrimp,13.99,meat,1
+2026-02-26,Costco,Lettuce,2.99,produce,1
+2026-02-27,Whole Foods,Tuna steaks,9.99,meat,1
+2026-02-27,Whole Foods,Lemon,0.79,produce,1
+2026-02-28,Trader Joe's,Chickpea flour,2.99,pantry,1
+2026-02-28,Trader Joe's,Maple syrup,8.99,pantry,1
+2026-03-01,Safeway,Cottage cheese,3.99,dairy,1
+2026-03-01,Safeway,Zucchini,2.49,produce,1
+2026-03-02,Costco,Duck breast,11.99,meat,1
+2026-03-02,Costco,Grapes,4.99,produce,1
+2026-03-03,Whole Foods,Lamb chops,13.49,meat,1
+2026-03-03,Whole Foods,Mushrooms,4.99,produce,1
+2026-03-04,Trader Joe's,Red lentils,1.99,pantry,1
+2026-03-04,Trader Joe's,Apple cider vinegar,4.99,pantry,1
+2026-03-05,Safeway,Ricotta,3.49,dairy,1
+2026-03-05,Safeway,Green beans,2.99,produce,1
+2026-03-06,Costco,Ground turkey,9.99,meat,1
+2026-03-06,Costco,Peaches,5.99,produce,1
+2026-03-07,Whole Foods,Scallops,15.99,meat,1
+2026-03-07,Whole Foods,Celery,1.49,produce,1
+2026-03-08,Trader Joe's,Buckwheat,3.99,pantry,1
+2026-03-08,Trader Joe's,Tahini,6.99,pantry,1

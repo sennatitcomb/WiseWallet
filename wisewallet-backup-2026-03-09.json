@@ -1,0 +1,1520 @@
+{
+  "receipts": [
+    {
+      "id": "csv-1773096278568-1",
+      "store": "Whole Foods",
+      "date": "2026-02-07",
+      "total": 3.49,
+      "category": "other",
+      "items": [
+        {
+          "name": "Whole Foods",
+          "price": 3.49,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-2",
+      "store": "Whole Foods",
+      "date": "2026-02-07",
+      "total": 5.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Whole Foods",
+          "price": 5.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-3",
+      "store": "Trader Joe's",
+      "date": "2026-02-08",
+      "total": 4.29,
+      "category": "other",
+      "items": [
+        {
+          "name": "Trader Joe's",
+          "price": 4.29,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-4",
+      "store": "Trader Joe's",
+      "date": "2026-02-08",
+      "total": 7.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Trader Joe's",
+          "price": 7.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-5",
+      "store": "Safeway",
+      "date": "2026-02-09",
+      "total": 8.49,
+      "category": "other",
+      "items": [
+        {
+          "name": "Safeway",
+          "price": 8.49,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-6",
+      "store": "Safeway",
+      "date": "2026-02-09",
+      "total": 2.19,
+      "category": "other",
+      "items": [
+        {
+          "name": "Safeway",
+          "price": 2.19,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-7",
+      "store": "Costco",
+      "date": "2026-02-10",
+      "total": 7.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Costco",
+          "price": 7.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-8",
+      "store": "Costco",
+      "date": "2026-02-10",
+      "total": 9.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Costco",
+          "price": 9.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-9",
+      "store": "Whole Foods",
+      "date": "2026-02-11",
+      "total": 12.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Whole Foods",
+          "price": 12.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-10",
+      "store": "Whole Foods",
+      "date": "2026-02-11",
+      "total": 4.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Whole Foods",
+          "price": 4.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-11",
+      "store": "Trader Joe's",
+      "date": "2026-02-12",
+      "total": 4.49,
+      "category": "other",
+      "items": [
+        {
+          "name": "Trader Joe's",
+          "price": 4.49,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-12",
+      "store": "Trader Joe's",
+      "date": "2026-02-12",
+      "total": 9.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Trader Joe's",
+          "price": 9.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-13",
+      "store": "Safeway",
+      "date": "2026-02-13",
+      "total": 5.49,
+      "category": "other",
+      "items": [
+        {
+          "name": "Safeway",
+          "price": 5.49,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-14",
+      "store": "Safeway",
+      "date": "2026-02-13",
+      "total": 2.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Safeway",
+          "price": 2.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-15",
+      "store": "Costco",
+      "date": "2026-02-14",
+      "total": 6.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Costco",
+          "price": 6.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-16",
+      "store": "Costco",
+      "date": "2026-02-14",
+      "total": 3.49,
+      "category": "other",
+      "items": [
+        {
+          "name": "Costco",
+          "price": 3.49,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-17",
+      "store": "Whole Foods",
+      "date": "2026-02-15",
+      "total": 6.98,
+      "category": "other",
+      "items": [
+        {
+          "name": "Whole Foods",
+          "price": 6.98,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-18",
+      "store": "Whole Foods",
+      "date": "2026-02-15",
+      "total": 4.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Whole Foods",
+          "price": 4.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-19",
+      "store": "Trader Joe's",
+      "date": "2026-02-16",
+      "total": 9.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Trader Joe's",
+          "price": 9.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-20",
+      "store": "Trader Joe's",
+      "date": "2026-02-16",
+      "total": 2.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Trader Joe's",
+          "price": 2.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-21",
+      "store": "Safeway",
+      "date": "2026-02-17",
+      "total": 4.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Safeway",
+          "price": 4.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-22",
+      "store": "Safeway",
+      "date": "2026-02-17",
+      "total": 3.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Safeway",
+          "price": 3.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-23",
+      "store": "Costco",
+      "date": "2026-02-18",
+      "total": 8.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Costco",
+          "price": 8.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-24",
+      "store": "Costco",
+      "date": "2026-02-18",
+      "total": 2.49,
+      "category": "other",
+      "items": [
+        {
+          "name": "Costco",
+          "price": 2.49,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-25",
+      "store": "Whole Foods",
+      "date": "2026-02-19",
+      "total": 11.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Whole Foods",
+          "price": 11.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-26",
+      "store": "Whole Foods",
+      "date": "2026-02-19",
+      "total": 1.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Whole Foods",
+          "price": 1.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-27",
+      "store": "Trader Joe's",
+      "date": "2026-02-20",
+      "total": 3.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Trader Joe's",
+          "price": 3.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-28",
+      "store": "Trader Joe's",
+      "date": "2026-02-20",
+      "total": 8.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Trader Joe's",
+          "price": 8.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-29",
+      "store": "Safeway",
+      "date": "2026-02-21",
+      "total": 4.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Safeway",
+          "price": 4.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-30",
+      "store": "Safeway",
+      "date": "2026-02-21",
+      "total": 1.49,
+      "category": "other",
+      "items": [
+        {
+          "name": "Safeway",
+          "price": 1.49,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-31",
+      "store": "Costco",
+      "date": "2026-02-22",
+      "total": 7.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Costco",
+          "price": 7.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-32",
+      "store": "Costco",
+      "date": "2026-02-22",
+      "total": 11.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Costco",
+          "price": 11.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-33",
+      "store": "Whole Foods",
+      "date": "2026-02-23",
+      "total": 14.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Whole Foods",
+          "price": 14.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-34",
+      "store": "Whole Foods",
+      "date": "2026-02-23",
+      "total": 3.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Whole Foods",
+          "price": 3.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-35",
+      "store": "Trader Joe's",
+      "date": "2026-02-24",
+      "total": 2.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Trader Joe's",
+          "price": 2.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-36",
+      "store": "Trader Joe's",
+      "date": "2026-02-24",
+      "total": 3.49,
+      "category": "other",
+      "items": [
+        {
+          "name": "Trader Joe's",
+          "price": 3.49,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-37",
+      "store": "Safeway",
+      "date": "2026-02-25",
+      "total": 4.49,
+      "category": "other",
+      "items": [
+        {
+          "name": "Safeway",
+          "price": 4.49,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-38",
+      "store": "Safeway",
+      "date": "2026-02-25",
+      "total": 1.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Safeway",
+          "price": 1.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-39",
+      "store": "Costco",
+      "date": "2026-02-26",
+      "total": 13.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Costco",
+          "price": 13.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-40",
+      "store": "Costco",
+      "date": "2026-02-26",
+      "total": 2.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Costco",
+          "price": 2.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-41",
+      "store": "Whole Foods",
+      "date": "2026-02-27",
+      "total": 9.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Whole Foods",
+          "price": 9.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-42",
+      "store": "Whole Foods",
+      "date": "2026-02-27",
+      "total": 0.79,
+      "category": "other",
+      "items": [
+        {
+          "name": "Whole Foods",
+          "price": 0.79,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-43",
+      "store": "Trader Joe's",
+      "date": "2026-02-28",
+      "total": 2.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Trader Joe's",
+          "price": 2.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-44",
+      "store": "Trader Joe's",
+      "date": "2026-02-28",
+      "total": 8.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Trader Joe's",
+          "price": 8.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-45",
+      "store": "Safeway",
+      "date": "2026-03-01",
+      "total": 3.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Safeway",
+          "price": 3.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-46",
+      "store": "Safeway",
+      "date": "2026-03-01",
+      "total": 2.49,
+      "category": "other",
+      "items": [
+        {
+          "name": "Safeway",
+          "price": 2.49,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-47",
+      "store": "Costco",
+      "date": "2026-03-02",
+      "total": 11.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Costco",
+          "price": 11.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-48",
+      "store": "Costco",
+      "date": "2026-03-02",
+      "total": 4.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Costco",
+          "price": 4.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-49",
+      "store": "Whole Foods",
+      "date": "2026-03-03",
+      "total": 13.49,
+      "category": "other",
+      "items": [
+        {
+          "name": "Whole Foods",
+          "price": 13.49,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-50",
+      "store": "Whole Foods",
+      "date": "2026-03-03",
+      "total": 4.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Whole Foods",
+          "price": 4.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-51",
+      "store": "Trader Joe's",
+      "date": "2026-03-04",
+      "total": 1.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Trader Joe's",
+          "price": 1.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-52",
+      "store": "Trader Joe's",
+      "date": "2026-03-04",
+      "total": 4.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Trader Joe's",
+          "price": 4.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-53",
+      "store": "Safeway",
+      "date": "2026-03-05",
+      "total": 3.49,
+      "category": "other",
+      "items": [
+        {
+          "name": "Safeway",
+          "price": 3.49,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-54",
+      "store": "Safeway",
+      "date": "2026-03-05",
+      "total": 2.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Safeway",
+          "price": 2.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-55",
+      "store": "Costco",
+      "date": "2026-03-06",
+      "total": 9.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Costco",
+          "price": 9.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-56",
+      "store": "Costco",
+      "date": "2026-03-06",
+      "total": 5.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Costco",
+          "price": 5.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-57",
+      "store": "Whole Foods",
+      "date": "2026-03-07",
+      "total": 15.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Whole Foods",
+          "price": 15.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-58",
+      "store": "Whole Foods",
+      "date": "2026-03-07",
+      "total": 1.49,
+      "category": "other",
+      "items": [
+        {
+          "name": "Whole Foods",
+          "price": 1.49,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-59",
+      "store": "Trader Joe's",
+      "date": "2026-03-08",
+      "total": 3.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Trader Joe's",
+          "price": 3.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "csv-1773096278569-60",
+      "store": "Trader Joe's",
+      "date": "2026-03-08",
+      "total": 6.99,
+      "category": "other",
+      "items": [
+        {
+          "name": "Trader Joe's",
+          "price": 6.99,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "1773096531076",
+      "store": "QFC",
+      "date": "2026-03-09",
+      "category": "groceries",
+      "total": 146.5,
+      "items": [
+        {
+          "name": "chicken",
+          "price": 12.1,
+          "quantity": 1
+        },
+        {
+          "name": "cheese",
+          "price": 5.34,
+          "quantity": 1
+        },
+        {
+          "name": "vaccum",
+          "price": 129.16,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "1773096600325",
+      "store": "QFC",
+      "date": "2018-06-15",
+      "category": "groceries",
+      "total": 46.5,
+      "items": [
+        {
+          "name": "chicken",
+          "price": 2.3,
+          "quantity": 1
+        },
+        {
+          "name": "eggs",
+          "price": 23.5,
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "name": "Whole Foods",
+      "price": 3.49,
+      "quantity": 1,
+      "store": "Whole Foods",
+      "date": "2026-02-07",
+      "category": "other",
+      "receiptId": "csv-1773096278568-1"
+    },
+    {
+      "name": "Whole Foods",
+      "price": 5.99,
+      "quantity": 1,
+      "store": "Whole Foods",
+      "date": "2026-02-07",
+      "category": "other",
+      "receiptId": "csv-1773096278569-2"
+    },
+    {
+      "name": "Trader Joe's",
+      "price": 4.29,
+      "quantity": 1,
+      "store": "Trader Joe's",
+      "date": "2026-02-08",
+      "category": "other",
+      "receiptId": "csv-1773096278569-3"
+    },
+    {
+      "name": "Trader Joe's",
+      "price": 7.99,
+      "quantity": 1,
+      "store": "Trader Joe's",
+      "date": "2026-02-08",
+      "category": "other",
+      "receiptId": "csv-1773096278569-4"
+    },
+    {
+      "name": "Safeway",
+      "price": 8.49,
+      "quantity": 1,
+      "store": "Safeway",
+      "date": "2026-02-09",
+      "category": "other",
+      "receiptId": "csv-1773096278569-5"
+    },
+    {
+      "name": "Safeway",
+      "price": 2.19,
+      "quantity": 1,
+      "store": "Safeway",
+      "date": "2026-02-09",
+      "category": "other",
+      "receiptId": "csv-1773096278569-6"
+    },
+    {
+      "name": "Costco",
+      "price": 7.99,
+      "quantity": 1,
+      "store": "Costco",
+      "date": "2026-02-10",
+      "category": "other",
+      "receiptId": "csv-1773096278569-7"
+    },
+    {
+      "name": "Costco",
+      "price": 9.99,
+      "quantity": 1,
+      "store": "Costco",
+      "date": "2026-02-10",
+      "category": "other",
+      "receiptId": "csv-1773096278569-8"
+    },
+    {
+      "name": "Whole Foods",
+      "price": 12.99,
+      "quantity": 1,
+      "store": "Whole Foods",
+      "date": "2026-02-11",
+      "category": "other",
+      "receiptId": "csv-1773096278569-9"
+    },
+    {
+      "name": "Whole Foods",
+      "price": 4.99,
+      "quantity": 1,
+      "store": "Whole Foods",
+      "date": "2026-02-11",
+      "category": "other",
+      "receiptId": "csv-1773096278569-10"
+    },
+    {
+      "name": "Trader Joe's",
+      "price": 4.49,
+      "quantity": 1,
+      "store": "Trader Joe's",
+      "date": "2026-02-12",
+      "category": "other",
+      "receiptId": "csv-1773096278569-11"
+    },
+    {
+      "name": "Trader Joe's",
+      "price": 9.99,
+      "quantity": 1,
+      "store": "Trader Joe's",
+      "date": "2026-02-12",
+      "category": "other",
+      "receiptId": "csv-1773096278569-12"
+    },
+    {
+      "name": "Safeway",
+      "price": 5.49,
+      "quantity": 1,
+      "store": "Safeway",
+      "date": "2026-02-13",
+      "category": "other",
+      "receiptId": "csv-1773096278569-13"
+    },
+    {
+      "name": "Safeway",
+      "price": 2.99,
+      "quantity": 1,
+      "store": "Safeway",
+      "date": "2026-02-13",
+      "category": "other",
+      "receiptId": "csv-1773096278569-14"
+    },
+    {
+      "name": "Costco",
+      "price": 6.99,
+      "quantity": 1,
+      "store": "Costco",
+      "date": "2026-02-14",
+      "category": "other",
+      "receiptId": "csv-1773096278569-15"
+    },
+    {
+      "name": "Costco",
+      "price": 3.49,
+      "quantity": 1,
+      "store": "Costco",
+      "date": "2026-02-14",
+      "category": "other",
+      "receiptId": "csv-1773096278569-16"
+    },
+    {
+      "name": "Whole Foods",
+      "price": 6.98,
+      "quantity": 1,
+      "store": "Whole Foods",
+      "date": "2026-02-15",
+      "category": "other",
+      "receiptId": "csv-1773096278569-17"
+    },
+    {
+      "name": "Whole Foods",
+      "price": 4.99,
+      "quantity": 1,
+      "store": "Whole Foods",
+      "date": "2026-02-15",
+      "category": "other",
+      "receiptId": "csv-1773096278569-18"
+    },
+    {
+      "name": "Trader Joe's",
+      "price": 9.99,
+      "quantity": 1,
+      "store": "Trader Joe's",
+      "date": "2026-02-16",
+      "category": "other",
+      "receiptId": "csv-1773096278569-19"
+    },
+    {
+      "name": "Trader Joe's",
+      "price": 2.99,
+      "quantity": 1,
+      "store": "Trader Joe's",
+      "date": "2026-02-16",
+      "category": "other",
+      "receiptId": "csv-1773096278569-20"
+    },
+    {
+      "name": "Safeway",
+      "price": 4.99,
+      "quantity": 1,
+      "store": "Safeway",
+      "date": "2026-02-17",
+      "category": "other",
+      "receiptId": "csv-1773096278569-21"
+    },
+    {
+      "name": "Safeway",
+      "price": 3.99,
+      "quantity": 1,
+      "store": "Safeway",
+      "date": "2026-02-17",
+      "category": "other",
+      "receiptId": "csv-1773096278569-22"
+    },
+    {
+      "name": "Costco",
+      "price": 8.99,
+      "quantity": 1,
+      "store": "Costco",
+      "date": "2026-02-18",
+      "category": "other",
+      "receiptId": "csv-1773096278569-23"
+    },
+    {
+      "name": "Costco",
+      "price": 2.49,
+      "quantity": 1,
+      "store": "Costco",
+      "date": "2026-02-18",
+      "category": "other",
+      "receiptId": "csv-1773096278569-24"
+    },
+    {
+      "name": "Whole Foods",
+      "price": 11.99,
+      "quantity": 1,
+      "store": "Whole Foods",
+      "date": "2026-02-19",
+      "category": "other",
+      "receiptId": "csv-1773096278569-25"
+    },
+    {
+      "name": "Whole Foods",
+      "price": 1.99,
+      "quantity": 1,
+      "store": "Whole Foods",
+      "date": "2026-02-19",
+      "category": "other",
+      "receiptId": "csv-1773096278569-26"
+    },
+    {
+      "name": "Trader Joe's",
+      "price": 3.99,
+      "quantity": 1,
+      "store": "Trader Joe's",
+      "date": "2026-02-20",
+      "category": "other",
+      "receiptId": "csv-1773096278569-27"
+    },
+    {
+      "name": "Trader Joe's",
+      "price": 8.99,
+      "quantity": 1,
+      "store": "Trader Joe's",
+      "date": "2026-02-20",
+      "category": "other",
+      "receiptId": "csv-1773096278569-28"
+    },
+    {
+      "name": "Safeway",
+      "price": 4.99,
+      "quantity": 1,
+      "store": "Safeway",
+      "date": "2026-02-21",
+      "category": "other",
+      "receiptId": "csv-1773096278569-29"
+    },
+    {
+      "name": "Safeway",
+      "price": 1.49,
+      "quantity": 1,
+      "store": "Safeway",
+      "date": "2026-02-21",
+      "category": "other",
+      "receiptId": "csv-1773096278569-30"
+    },
+    {
+      "name": "Costco",
+      "price": 7.99,
+      "quantity": 1,
+      "store": "Costco",
+      "date": "2026-02-22",
+      "category": "other",
+      "receiptId": "csv-1773096278569-31"
+    },
+    {
+      "name": "Costco",
+      "price": 11.99,
+      "quantity": 1,
+      "store": "Costco",
+      "date": "2026-02-22",
+      "category": "other",
+      "receiptId": "csv-1773096278569-32"
+    },
+    {
+      "name": "Whole Foods",
+      "price": 14.99,
+      "quantity": 1,
+      "store": "Whole Foods",
+      "date": "2026-02-23",
+      "category": "other",
+      "receiptId": "csv-1773096278569-33"
+    },
+    {
+      "name": "Whole Foods",
+      "price": 3.99,
+      "quantity": 1,
+      "store": "Whole Foods",
+      "date": "2026-02-23",
+      "category": "other",
+      "receiptId": "csv-1773096278569-34"
+    },
+    {
+      "name": "Trader Joe's",
+      "price": 2.99,
+      "quantity": 1,
+      "store": "Trader Joe's",
+      "date": "2026-02-24",
+      "category": "other",
+      "receiptId": "csv-1773096278569-35"
+    },
+    {
+      "name": "Trader Joe's",
+      "price": 3.49,
+      "quantity": 1,
+      "store": "Trader Joe's",
+      "date": "2026-02-24",
+      "category": "other",
+      "receiptId": "csv-1773096278569-36"
+    },
+    {
+      "name": "Safeway",
+      "price": 4.49,
+      "quantity": 1,
+      "store": "Safeway",
+      "date": "2026-02-25",
+      "category": "other",
+      "receiptId": "csv-1773096278569-37"
+    },
+    {
+      "name": "Safeway",
+      "price": 1.99,
+      "quantity": 1,
+      "store": "Safeway",
+      "date": "2026-02-25",
+      "category": "other",
+      "receiptId": "csv-1773096278569-38"
+    },
+    {
+      "name": "Costco",
+      "price": 13.99,
+      "quantity": 1,
+      "store": "Costco",
+      "date": "2026-02-26",
+      "category": "other",
+      "receiptId": "csv-1773096278569-39"
+    },
+    {
+      "name": "Costco",
+      "price": 2.99,
+      "quantity": 1,
+      "store": "Costco",
+      "date": "2026-02-26",
+      "category": "other",
+      "receiptId": "csv-1773096278569-40"
+    },
+    {
+      "name": "Whole Foods",
+      "price": 9.99,
+      "quantity": 1,
+      "store": "Whole Foods",
+      "date": "2026-02-27",
+      "category": "other",
+      "receiptId": "csv-1773096278569-41"
+    },
+    {
+      "name": "Whole Foods",
+      "price": 0.79,
+      "quantity": 1,
+      "store": "Whole Foods",
+      "date": "2026-02-27",
+      "category": "other",
+      "receiptId": "csv-1773096278569-42"
+    },
+    {
+      "name": "Trader Joe's",
+      "price": 2.99,
+      "quantity": 1,
+      "store": "Trader Joe's",
+      "date": "2026-02-28",
+      "category": "other",
+      "receiptId": "csv-1773096278569-43"
+    },
+    {
+      "name": "Trader Joe's",
+      "price": 8.99,
+      "quantity": 1,
+      "store": "Trader Joe's",
+      "date": "2026-02-28",
+      "category": "other",
+      "receiptId": "csv-1773096278569-44"
+    },
+    {
+      "name": "Safeway",
+      "price": 3.99,
+      "quantity": 1,
+      "store": "Safeway",
+      "date": "2026-03-01",
+      "category": "other",
+      "receiptId": "csv-1773096278569-45"
+    },
+    {
+      "name": "Safeway",
+      "price": 2.49,
+      "quantity": 1,
+      "store": "Safeway",
+      "date": "2026-03-01",
+      "category": "other",
+      "receiptId": "csv-1773096278569-46"
+    },
+    {
+      "name": "Costco",
+      "price": 11.99,
+      "quantity": 1,
+      "store": "Costco",
+      "date": "2026-03-02",
+      "category": "other",
+      "receiptId": "csv-1773096278569-47"
+    },
+    {
+      "name": "Costco",
+      "price": 4.99,
+      "quantity": 1,
+      "store": "Costco",
+      "date": "2026-03-02",
+      "category": "other",
+      "receiptId": "csv-1773096278569-48"
+    },
+    {
+      "name": "Whole Foods",
+      "price": 13.49,
+      "quantity": 1,
+      "store": "Whole Foods",
+      "date": "2026-03-03",
+      "category": "other",
+      "receiptId": "csv-1773096278569-49"
+    },
+    {
+      "name": "Whole Foods",
+      "price": 4.99,
+      "quantity": 1,
+      "store": "Whole Foods",
+      "date": "2026-03-03",
+      "category": "other",
+      "receiptId": "csv-1773096278569-50"
+    },
+    {
+      "name": "Trader Joe's",
+      "price": 1.99,
+      "quantity": 1,
+      "store": "Trader Joe's",
+      "date": "2026-03-04",
+      "category": "other",
+      "receiptId": "csv-1773096278569-51"
+    },
+    {
+      "name": "Trader Joe's",
+      "price": 4.99,
+      "quantity": 1,
+      "store": "Trader Joe's",
+      "date": "2026-03-04",
+      "category": "other",
+      "receiptId": "csv-1773096278569-52"
+    },
+    {
+      "name": "Safeway",
+      "price": 3.49,
+      "quantity": 1,
+      "store": "Safeway",
+      "date": "2026-03-05",
+      "category": "other",
+      "receiptId": "csv-1773096278569-53"
+    },
+    {
+      "name": "Safeway",
+      "price": 2.99,
+      "quantity": 1,
+      "store": "Safeway",
+      "date": "2026-03-05",
+      "category": "other",
+      "receiptId": "csv-1773096278569-54"
+    },
+    {
+      "name": "Costco",
+      "price": 9.99,
+      "quantity": 1,
+      "store": "Costco",
+      "date": "2026-03-06",
+      "category": "other",
+      "receiptId": "csv-1773096278569-55"
+    },
+    {
+      "name": "Costco",
+      "price": 5.99,
+      "quantity": 1,
+      "store": "Costco",
+      "date": "2026-03-06",
+      "category": "other",
+      "receiptId": "csv-1773096278569-56"
+    },
+    {
+      "name": "Whole Foods",
+      "price": 15.99,
+      "quantity": 1,
+      "store": "Whole Foods",
+      "date": "2026-03-07",
+      "category": "other",
+      "receiptId": "csv-1773096278569-57"
+    },
+    {
+      "name": "Whole Foods",
+      "price": 1.49,
+      "quantity": 1,
+      "store": "Whole Foods",
+      "date": "2026-03-07",
+      "category": "other",
+      "receiptId": "csv-1773096278569-58"
+    },
+    {
+      "name": "Trader Joe's",
+      "price": 3.99,
+      "quantity": 1,
+      "store": "Trader Joe's",
+      "date": "2026-03-08",
+      "category": "other",
+      "receiptId": "csv-1773096278569-59"
+    },
+    {
+      "name": "Trader Joe's",
+      "price": 6.99,
+      "quantity": 1,
+      "store": "Trader Joe's",
+      "date": "2026-03-08",
+      "category": "other",
+      "receiptId": "csv-1773096278569-60"
+    },
+    {
+      "name": "chicken",
+      "price": 12.1,
+      "quantity": 1,
+      "store": "QFC",
+      "date": "2026-03-09",
+      "category": "groceries",
+      "receiptId": "1773096531076"
+    },
+    {
+      "name": "cheese",
+      "price": 5.34,
+      "quantity": 1,
+      "store": "QFC",
+      "date": "2026-03-09",
+      "category": "groceries",
+      "receiptId": "1773096531076"
+    },
+    {
+      "name": "vaccum",
+      "price": 129.16,
+      "quantity": 1,
+      "store": "QFC",
+      "date": "2026-03-09",
+      "category": "groceries",
+      "receiptId": "1773096531076"
+    },
+    {
+      "name": "chicken",
+      "price": 2.3,
+      "quantity": 1,
+      "store": "QFC",
+      "date": "2018-06-15",
+      "category": "groceries",
+      "receiptId": "1773096600325"
+    },
+    {
+      "name": "eggs",
+      "price": 23.5,
+      "quantity": 1,
+      "store": "QFC",
+      "date": "2018-06-15",
+      "category": "groceries",
+      "receiptId": "1773096600325"
+    }
+  ],
+  "priceHistory": {
+    "chicken": [
+      {
+        "date": "2026-03-09",
+        "price": 12.1,
+        "store": "QFC"
+      },
+      {
+        "date": "2018-06-15",
+        "price": 2.3,
+        "store": "QFC"
+      }
+    ],
+    "cheese": [
+      {
+        "date": "2026-03-09",
+        "price": 5.34,
+        "store": "QFC"
+      }
+    ],
+    "vaccum": [
+      {
+        "date": "2026-03-09",
+        "price": 129.16,
+        "store": "QFC"
+      }
+    ],
+    "eggs": [
+      {
+        "date": "2018-06-15",
+        "price": 23.5,
+        "store": "QFC"
+      }
+    ]
+  },
+  "forecasts": {
+    "chicken": {
+      "current": 7.199999999999999,
+      "forecasted": 7.343999999999999,
+      "trend": "up",
+      "volatility": 68.05555555555556,
+      "confidence": 20,
+      "lastUpdate": "2026-03-09T22:50:00.326Z"
+    }
+  },
+  "exportDate": "2026-03-09T22:50:18.907Z"
+}
